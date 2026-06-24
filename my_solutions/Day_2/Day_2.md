@@ -1,10 +1,11 @@
-"""
-Built in functions: 
+# Day 2
+
+## Built in functions: 
 
 Built in functions that are globally available for use
     - Can make use of built-in funcitons without importing or configuring
 
-Variables: 
+## Variables: 
 
 Store data in computer memory. 
 
@@ -25,7 +26,7 @@ Standard naming style:
 
 Variable declaration: assign a data type to a variable using "="
 
-Data Types: 
+## Data Types: 
 
 Understand different data types very well
 
@@ -36,4 +37,3 @@ Numbers:
     - Integer
     - Floating
     - Complex
-"""
