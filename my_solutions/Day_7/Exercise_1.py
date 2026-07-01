@@ -23,6 +23,6 @@ it_companies.remove("NVDIA")
 print(it_companies)
 
 # 5. What is the difference between remove and discard
-#    Both remove and discard remove an item from the list. 
-#    However remove method will raise an error if the said item is not in the list
-#    Whereas discard method will not raise an error if the said item is not in the list 
+#    Both remove and discard remove an item from the set. 
+#    However remove method will raise an error if the said item is not in the set
+#    Whereas discard method will not raise an error if the said item is not in the set 
