@@ -43,16 +43,16 @@ def check_python_skill(person:dict):
 #    print('He is a fullstack developer'), else print('unknown title') - for more
 #    accurate results more conditions can be nested!
 def check_developer_type(person: dict):
-    frontend = ['JavaScript','React']
-    backend = ['Node','Python','MongoDB']
-    fullstack = ['React','Node','MongoDB']
+    frontend = {'JavaScript','React'}
+    backend = {'Node','Python','MongoDB'}
+    fullstack = {'React','Node','MongoDB'}
     if "skills" in person:
         skill_list = person['skills']
-        if skill_list == frontend:
+        if frontend.issubset(set(skill_list)):
             print("He is a front end developer")
-        elif skill_list == backend:
+        elif backend.issubset(set(skill_list)):
             print("He is a back end developer")
-        elif skill_list == fullstack:
+        elif fullstack.issubset(set(skill_list)):
             print("He is a fullstack developer")
         else:
             print("unknown title")
