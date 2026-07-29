@@ -85,6 +85,13 @@ def sol_quadratic(a,b,c):
     x1 = eqn_1 + eqn_2
     x2 = eqn_1 - eqn_2
     return x1, x2
+# Math is right (splitting -b/2a from sqrt(disc)/2a is a neat way to write it),
+# but: (a) the exercise names the function solve_quadratic_eqn; (b) a negative
+# discriminant raises ValueError from math.sqrt — guard it:
+#     disc = b*b - 4*a*c
+#     if disc < 0:
+#         return ()          # no real solutions
+# Returning a set/tuple also matches "solution set" in the prompt.
 
 # print(sol_quadratic(1/2, -3,5/2))
 
@@ -139,6 +146,10 @@ food_stuff = ['Potato', 'Tomato', 'Mango', 'Milk']
 def add_item(arr, item):
     arr.append(item)
     return arr
+# Works, but it mutates the caller's list as well as returning it. Same for
+# remove_item below. That's the same class of bug as calculate_range in
+# Exercise_2 — a function that both returns AND edits its input surprises people.
+# Non-mutating version: `return arr + [item]`.
 
 # print(add_item(food_stuff, 'Meat'))
 
