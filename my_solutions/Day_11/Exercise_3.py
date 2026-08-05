@@ -6,10 +6,8 @@ from math import sqrt
 # 1. Write a function called is_prime, which checks if a number is prime.
 
 def is_prime(num):
-    if num == 1:
-        return True
-    if num == 2: 
-        return True
+    if num < 2: 
+        return False
     for i in range(2,int(sqrt(num) + 1)):
         if num % i == 0:
             return False
@@ -66,6 +64,7 @@ def is_same_type(arr: list):
 # print(is_same_type(arr))
 
 # 4. Write a function which check if provided variable is a valid python variable.
+import keyword
 
 def valid_variable(variable_name: str):
     illegal_char = ['!','@','#','$','%','^','&','*']
@@ -73,6 +72,9 @@ def valid_variable(variable_name: str):
         if char in illegal_char:
             return False
     return True
+
+def correct_valid_variable(variable_name: str):
+    return variable_name.isidentifier() and not keyword.iskeyword(variable_name)
 # WRONG — a blocklist of 8 symbols misses nearly everything. All of these
 # returned True when I ran it, and none are valid variable names:
 #     '2name'   (can't start with a digit)

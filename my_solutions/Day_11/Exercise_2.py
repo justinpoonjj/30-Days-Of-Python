@@ -40,6 +40,9 @@ def is_empty(input):
     if input is None:
         return True
     return False
+
+def correct_is_empty(input):
+    return not input
 # WRONG: only catches None. "" , [], {}, () and 0 are all "empty" but return False.
 # Python already treats them as falsy, so the whole body is one line:
 #     return not value
@@ -65,7 +68,7 @@ def caluculate_median(nums: list):
     if len(nums) % 2 == 0:
         median = (nums[mid-1] + nums[mid]) / 2
         return median
-    return mid + 1
+    return nums[mid]
 # WRONG, two separate bugs:
 # 1. The list is never sorted. Median is defined on sorted data. With the given
 #    `numbers` this returns 1.5 instead of the correct 3.0.
@@ -102,8 +105,8 @@ def calculate_mode(nums: list):
 # left in a function that already returns the value. Drop the print.
 
 def calculate_range(nums: list):
-    min = nums.pop(0)
-    max = nums.pop(0)
+    min = nums[0]
+    max = nums[0]
     for num in nums:
         if num < min:
             min = num
@@ -160,6 +163,10 @@ def greet(*name):
         print("Hello, Guest!")
         return
     print(f"Hello, {name[0]}!")
+    return
+
+def correct_greet(name="Guest"):
+    print(f"Hello, {name}")
     return
 
 # `*arg` is being stored as a tuple, you would have to index it to avoid the awkwardness in formatting
